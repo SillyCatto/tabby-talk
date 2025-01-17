@@ -1,5 +1,4 @@
 const express = require("express");
-const path = require("node:path");
 const { Server } = require("socket.io");
 const app = express();
 const PORT = 3000;
@@ -11,8 +10,27 @@ const server = app.listen(PORT, () => {
 let connectedSockets = new Set();
 
 const io = new Server(server);
-io.on("connection", (socket) => {
+
+const addClient = (socket) => {
   console.log("Socket connected: ", socket.id);
   connectedSockets.add(socket.id);
   io.emit("clients-total", connectedSockets.size);
+};
+
+const removeClient = (socket) => {
+  console.log("Socket disconnected: ", socket.id);
+  connectedSockets.delete(socket.id);
+  io.emit("clients-total", connectedSockets.size);
+};
+
+io.on("connection", (socket) => {
+  addClient(socket);
+
+  socket.on("disconnect", () => {
+    removeClient(socket);
+  });
+
+  socket.on("feedback", (data) => {
+    socket.broadcast.emit("feedback", data);
+  });
 });
