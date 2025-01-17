@@ -1,9 +1,27 @@
+import { io } from "socket.io-client";
+import Title from "./Title";
+import { useEffect, useState } from "react";
+
+const socket = io();
+
 function App() {
+  const [totalClients, setTotalClients] = useState(0);
+  const [name, setName] = useState("anonymous");
+  const [messages, setMessages] = useState([]);
+  const [message, setMessage] = useState("");
+  const [feedback, setFeedback] = useState("");
+
+  useEffect(() => {
+    socket.on("clients-total", (total) => setTotalClients(total));
+    socket.on("chat-message", (data) => {
+      setMessages((prev) => [...prev, { ...data, isOwn: false }]);
+    });
+    socket.on("feedback", (data) => setFeedback(data.feedback));
+  });
+
   return (
     <>
-      <div className="flex flex-col justify-center items-center font-medium text-xl">
-        <h2>TabbyTalk 😺</h2>
-      </div>
+      <Title />
     </>
   );
 }
