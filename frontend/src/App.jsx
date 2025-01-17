@@ -25,6 +25,14 @@ function App() {
     };
   }, []);
 
+  const handleTyping = () => {
+    socket.emit("feedback", { feedback: `${name} is typing...` });
+  };
+
+  const stopTyping = () => {
+    socket.emit("feedback", { feedback: "" });
+  };
+
   return (
     <>
       <div className="flex flex-col items-center p-4">
