@@ -17,7 +17,13 @@ function App() {
       setMessages((prev) => [...prev, { ...data, isOwn: false }]);
     });
     socket.on("feedback", (data) => setFeedback(data.feedback));
-  });
+
+    return () => {
+      socket.off("clients-total");
+      socket.off("chat-message");
+      socket.off("feedback");
+    };
+  }, []);
 
   return (
     <>
