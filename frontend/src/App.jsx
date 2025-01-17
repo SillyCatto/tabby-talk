@@ -1,6 +1,7 @@
 import { io } from "socket.io-client";
-import Title from "./Title";
+import Header from "./Header";
 import { useEffect, useState } from "react";
+import ClientCount from "./ClientCount";
 
 const socket = io();
 
@@ -36,7 +37,8 @@ function App() {
   return (
     <>
       <div className="flex flex-col items-center p-4">
-        <Title />
+        <Header />
+        <ClientCount />
       </div>
     </>
   );
