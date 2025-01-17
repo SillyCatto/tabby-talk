@@ -9,7 +9,12 @@ const server = app.listen(PORT, () => {
 
 let connectedSockets = new Set();
 
-const io = new Server(server);
+const io = new Server(server, {
+  cors: {
+    origin: "http://localhost:5173",
+    methods: ["GET", "POST"],
+  },
+});
 
 const addClient = (socket) => {
   console.log("Socket connected: ", socket.id);
