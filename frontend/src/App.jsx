@@ -29,12 +29,10 @@ function App() {
     };
   }, []);
 
-  const handleTyping = () => {
-    socket.emit("feedback", { feedback: `${name} is typing...` });
-  };
-
-  const stopTyping = () => {
-    socket.emit("feedback", { feedback: "" });
+  const handleTyping = (isTyping) => {
+    socket.emit("feedback", {
+      feedback: isTyping ? `${name} is typing...` : "",
+    });
   };
 
   const sendMessage = () => {
@@ -59,11 +57,13 @@ function App() {
           <ClientCount count={totalClients} />
           <NameInput name={name} setName={setName} />
         </div>
-        <MessageList messages={messages} feedback={feedback} />
+        <MessageList messages={messages} />
         <MessageInput
           message={message}
           setMessage={setMessage}
           sendMessage={sendMessage}
+          feedback={feedback}
+          handleTyping={handleTyping}
         />
       </div>
     </>

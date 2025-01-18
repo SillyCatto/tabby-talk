@@ -1,6 +1,6 @@
 import moment from "moment";
 
-const MessageList = ({ messages, feedback }) => {
+const MessageList = ({ messages }) => {
   return (
     <div className="flex flex-col rounded-lg shadow-md bg-base-300 w-full max-w-md mx-auto overflow-y-scroll overflow-x-hidden p-2 h-[500px]">
       <div className="space-y-3">
@@ -24,11 +24,6 @@ const MessageList = ({ messages, feedback }) => {
             </div>
           </div>
         ))}
-        {feedback && (
-          <li className="text-sm italic text-gray-500 text-center">
-            {feedback}
-          </li>
-        )}
       </div>
     </div>
   );
