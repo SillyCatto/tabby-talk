@@ -8,9 +8,9 @@ const MessageContainer = ({ messages }) => {
           key={index}
           className={`chat ${msg.isOwnMessage ? "chat-end" : "chat-start"}`}
         >
-          <div className="chat-header">{msg.name}</div>
+          <div className="chat-header opacity-70">{msg.name}</div>
           <div
-            className={`chat-bubble ${
+            className={`chat-bubble break-words max-w-[75%] overflow-hidden ${
               msg.isOwnMessage
                 ? "chat-bubble-primary"
                 : "bg-base-100 text-black"

@@ -51,12 +51,12 @@ function App() {
 
   return (
     <div className="flex flex-col h-screen items-center">
-      <div className="flex flex-col w-full max-w-md items-center shadow-md p-2 bg-neutral-300">
+      <div className="flex flex-col w-full max-w-md items-center p-1 bg-neutral-300">
         <Header />
         <ClientCount count={totalClients} />
         <NameInput name={name} setName={setName} />
       </div>
-      <div className="flex-grow bg-base-300 w-full max-w-md mx-auto overflow-y-scroll overflow-x-hidden p-2">
+      <div className="flex-grow bg-base-300 w-full max-w-md mx-auto overflow-y-scroll scroll-auto overflow-x-hidden p-2">
         <MessageContainer messages={messages} />
       </div>
       <div className="flex flex-col w-full max-w-md bottom-0 p-2 bg-neutral-300">
