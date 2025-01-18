@@ -1,4 +1,4 @@
-import React from "react";
+import { FaPaperPlane } from "react-icons/fa6";
 
 const MessageForm = ({ message, setMessage, sendMessage }) => {
   return (
@@ -16,6 +16,9 @@ const MessageForm = ({ message, setMessage, sendMessage }) => {
         placeholder="Type here..."
         className="input input-primary flex-grow"
       />
+      <button type="submit" className="btn btn-primary ml-2">
+        <FaPaperPlane />
+      </button>
     </form>
   );
 };

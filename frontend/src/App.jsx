@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import ClientCount from "./ClientCount";
 import NameInput from "./NameInput";
 import MessageForm from "./MessageForm";
+import MessageList from "./MessageList";
 
 const socket = io();
 
@@ -17,7 +18,7 @@ function App() {
   useEffect(() => {
     socket.on("clients-total", (total) => setTotalClients(total));
     socket.on("chat-message", (data) => {
-      setMessages((prev) => [...prev, { ...data, isOwn: false }]);
+      setMessages((prev) => [...prev, { ...data, isOwnMessage: false }]);
     });
     socket.on("feedback", (data) => setFeedback(data.feedback));
 
@@ -56,6 +57,7 @@ function App() {
         <Header />
         <ClientCount count={totalClients} />
         <NameInput name={name} setName={setName} />
+        <MessageList messages={messages} feedback={feedback} />
         <MessageForm
           message={message}
           setMessage={setMessage}
