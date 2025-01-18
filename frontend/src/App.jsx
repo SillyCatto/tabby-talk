@@ -36,12 +36,31 @@ function App() {
     socket.emit("feedback", { feedback: "" });
   };
 
+  const sendMessage = () => {
+    if (!message.trim()) return;
+
+    const msgData = {
+      name,
+      message,
+      dateTime: new Date(),
+    };
+
+    socket.emit("message", msgData);
+    setMessages((prev) => [...prev, { ...msgData, isOwnMessage: true }]);
+    setMessage("");
+  };
+
   return (
     <>
       <div className="flex flex-col items-center p-4">
         <Header />
         <ClientCount count={totalClients} />
         <NameInput name={name} setName={setName} />
+        <MessageForm
+          message={message}
+          setMessage={setMessage}
+          sendMessage={sendMessage}
+        />
       </div>
     </>
   );

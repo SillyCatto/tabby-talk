@@ -14,7 +14,7 @@ const MessageForm = ({ message, setMessage, sendMessage }) => {
         value={message}
         onChange={(e) => setMessage(e.target.value)}
         placeholder="Type here..."
-        className="input input-accent flex-grow"
+        className="input input-primary flex-grow"
       />
     </form>
   );
