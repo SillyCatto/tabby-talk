@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import ClientCount from "./ClientCount";
 import NameInput from "./NameInput";
 import MessageInput from "./MessageInput";
-import MessageList from "./MessageList";
+import MessageContainer from "./MessageContainer";
 
 const socket = io("http://localhost:3000");
 
@@ -57,7 +57,7 @@ function App() {
           <ClientCount count={totalClients} />
           <NameInput name={name} setName={setName} />
         </div>
-        <MessageList messages={messages} />
+        <MessageContainer messages={messages} />
         <MessageInput
           message={message}
           setMessage={setMessage}

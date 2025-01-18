@@ -1,6 +1,6 @@
 import moment from "moment";
 
-const MessageList = ({ messages }) => {
+const MessageContainer = ({ messages }) => {
   return (
     <div className="flex flex-col rounded-lg shadow-md bg-base-300 w-full max-w-md mx-auto overflow-y-scroll overflow-x-hidden p-2 h-[500px]">
       <div className="space-y-3">
@@ -29,4 +29,4 @@ const MessageList = ({ messages }) => {
   );
 };
 
-export default MessageList;
+export default MessageContainer;
