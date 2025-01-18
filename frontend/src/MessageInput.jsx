@@ -8,7 +8,7 @@ const MessageInput = ({
   handleTyping,
 }) => {
   return (
-    <div className="flex flex-col w-full max-w-md bottom-0 fixed p-2 bg-neutral-300">
+    <div>
       <div className="flex items-center w-full max-w-md">
         <form
           className="flex items-center w-full max-w-md"

@@ -50,14 +50,16 @@ function App() {
   };
 
   return (
-    <>
-      <div className="flex flex-col justify-center items-center p-4">
-        <div className="top-0 fixed">
-          <Header />
-          <ClientCount count={totalClients} />
-          <NameInput name={name} setName={setName} />
-        </div>
+    <div className="flex flex-col h-screen items-center">
+      <div className="flex flex-col w-full max-w-md items-center shadow-md p-2 bg-neutral-300">
+        <Header />
+        <ClientCount count={totalClients} />
+        <NameInput name={name} setName={setName} />
+      </div>
+      <div className="flex-grow bg-base-300 w-full max-w-md mx-auto overflow-y-scroll overflow-x-hidden p-2">
         <MessageContainer messages={messages} />
+      </div>
+      <div className="flex flex-col w-full max-w-md bottom-0 p-2 bg-neutral-300">
         <MessageInput
           message={message}
           setMessage={setMessage}
@@ -66,7 +68,7 @@ function App() {
           handleTyping={handleTyping}
         />
       </div>
-    </>
+    </div>
   );
 }
 
