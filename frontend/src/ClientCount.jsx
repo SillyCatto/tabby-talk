@@ -1,5 +1,9 @@
 const ClientCount = ({ count }) => {
-  return <p className="p-4">Total clients: {count}</p>;
+  return (
+    <div className="flex justify-center items-center">
+      Total clients: {count}
+    </div>
+  );
 };
 
 export default ClientCount;

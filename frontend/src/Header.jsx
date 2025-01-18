@@ -1,6 +1,6 @@
 const Title = () => {
   return (
-    <div className="font-medium text-3xl text-primary">
+    <div className="flex justify-center items-center font-medium text-2xl text-primary p-1">
       <h2>TabbyTalk 😺</h2>
     </div>
   );

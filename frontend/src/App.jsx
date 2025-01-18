@@ -3,7 +3,7 @@ import Header from "./Header";
 import { useEffect, useState } from "react";
 import ClientCount from "./ClientCount";
 import NameInput from "./NameInput";
-import MessageForm from "./MessageForm";
+import MessageInput from "./MessageInput";
 import MessageList from "./MessageList";
 
 const socket = io("http://localhost:3000");
@@ -53,12 +53,14 @@ function App() {
 
   return (
     <>
-      <div className="flex flex-col items-center p-4">
-        <Header />
-        <ClientCount count={totalClients} />
-        <NameInput name={name} setName={setName} />
+      <div className="flex flex-col justify-center items-center p-4">
+        <div className="top-0 fixed">
+          <Header />
+          <ClientCount count={totalClients} />
+          <NameInput name={name} setName={setName} />
+        </div>
         <MessageList messages={messages} feedback={feedback} />
-        <MessageForm
+        <MessageInput
           message={message}
           setMessage={setMessage}
           sendMessage={sendMessage}

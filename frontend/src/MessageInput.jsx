@@ -1,9 +1,9 @@
 import { FaPaperPlane } from "react-icons/fa6";
 
-const MessageForm = ({ message, setMessage, sendMessage }) => {
+const MessageInput = ({ message, setMessage, sendMessage }) => {
   return (
     <form
-      className="flex items-center w-full max-w-md mx-auto mt-4"
+      className="flex items-center w-full max-w-md mx-auto mt-2 bottom-0 fixed p-2 bg-neutral-300"
       onSubmit={(e) => {
         e.preventDefault();
         sendMessage();
@@ -23,4 +23,4 @@ const MessageForm = ({ message, setMessage, sendMessage }) => {
   );
 };
 
-export default MessageForm;
+export default MessageInput;
