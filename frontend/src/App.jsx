@@ -6,7 +6,7 @@ import NameInput from "./NameInput";
 import MessageForm from "./MessageForm";
 import MessageList from "./MessageList";
 
-const socket = io();
+const socket = io("http://localhost:3000");
 
 function App() {
   const [totalClients, setTotalClients] = useState(0);
