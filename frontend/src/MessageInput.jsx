@@ -9,7 +9,7 @@ const MessageInput = ({
 }) => {
   return (
     <div>
-      <div className="flex items-center w-full max-w-md p-2 m-0">
+      <div className="flex items-center w-full max-w-md p-2 m-0 font-roboto">
         <form
           className="flex items-center w-full max-w-md"
           onSubmit={(e) => {
@@ -35,7 +35,7 @@ const MessageInput = ({
           </div>
         </form>
       </div>
-      <div className="flex items-start text-sm italic text-black opacity-50 p-1 m-0">
+      <div className="flex items-start font-roboto text-sm italic text-black opacity-50 p-1 m-0">
         {feedback ? <p>{feedback}</p> : <p>&nbsp;</p>}
       </div>
     </div>

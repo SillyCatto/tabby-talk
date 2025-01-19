@@ -1,6 +1,6 @@
 const NameInput = ({ name, setName }) => {
   return (
-    <div className="w-full max-w-md">
+    <div className="w-full max-w-md p-1 font-geist">
       <input
         type="text"
         value={name}

@@ -2,7 +2,7 @@ import moment from "moment";
 
 const MessageContainer = ({ messages }) => {
   return (
-    <div className="space-y-2">
+    <div className="space-y-2 font-roboto">
       {messages.map((msg, index) => (
         <div
           key={index}
@@ -18,7 +18,7 @@ const MessageContainer = ({ messages }) => {
           >
             {msg.message}
           </div>
-          <div className="chat-footer opacity-50 text-sm italic">
+          <div className="chat-footer opacity-50 text-xs italic">
             {moment(msg.dateTime).fromNow()}
           </div>
         </div>
