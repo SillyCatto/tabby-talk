@@ -59,7 +59,7 @@ function App() {
       <div className="flex-grow bg-base-300 w-full max-w-md mx-auto overflow-y-scroll scroll-auto overflow-x-hidden p-2">
         <MessageContainer messages={messages} />
       </div>
-      <div className="flex flex-col w-full max-w-md bottom-0 p-2 bg-neutral-300">
+      <div className="flex flex-col w-full max-w-md bottom-0 bg-neutral-300">
         <MessageInput
           message={message}
           setMessage={setMessage}

@@ -1,4 +1,4 @@
-import { FaPaperPlane } from "react-icons/fa6";
+import { FaArrowRight } from "react-icons/fa6";
 
 const MessageInput = ({
   message,
@@ -9,7 +9,7 @@ const MessageInput = ({
 }) => {
   return (
     <div>
-      <div className="flex items-center w-full max-w-md">
+      <div className="flex items-center w-full max-w-md p-2 m-0">
         <form
           className="flex items-center w-full max-w-md"
           onSubmit={(e) => {
@@ -26,11 +26,13 @@ const MessageInput = ({
             }}
             onBlur={() => handleTyping(false)}
             placeholder="Type here..."
-            className="input input-primary flex-grow outline-none"
+            className="input input-primary input-sm flex-grow outline-none"
           />
-          <button type="submit" className="btn btn-primary ml-2">
-            <FaPaperPlane />
-          </button>
+          <div className="ml-2">
+            <button type="submit" className="btn btn-primary btn-sm">
+              <FaArrowRight />
+            </button>
+          </div>
         </form>
       </div>
       <div className="flex items-start text-sm italic text-black opacity-50 p-1 m-0">
